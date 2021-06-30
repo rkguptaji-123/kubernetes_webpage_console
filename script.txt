@@ -1,0 +1,151 @@
+<script>
+    function lw() {
+    
+    var i = document.getElementById("in1").value
+    
+    var xhr = new XMLHttpRequest();
+    
+    
+    xhr.open("GET","http://192.168.43.50/cgi-bin/kube.py?command="+i, true);
+    xhr.send();
+    
+    xhr.onload = function() {
+        var output = xhr.responseText;
+        document.getElementById("d1").innerHTML = output;
+        }
+    }
+    
+    </script>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes command</title>
+</head>
+
+<style>
+body {
+            text-align: center;
+	    margin:0px;
+	    padding:0px;
+            box-sizing:border-box;
+            background-image:url("https://i.pinimg.com/originals/12/f4/27/12f42739142333ee5341bbd37204c7c2.jpg") ;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            .a5 {
+            text-align: center;
+            transform: scale(1,1);
+            
+            }
+            #in1 {
+            font-size: 30px;
+            color: white;
+            background-color: rgb(11, 11, 12)
+        }
+        .a4 {
+            font-size: 22px;
+            color: rgb(228, 106, 218);
+            top: 0px;
+            padding: 20px;
+            margin:30px;
+
+        }
+        .a3 {
+            color: white;
+            background-color: rgb(13, 13, 14);
+            font-size: 30px;
+            text-align: center;
+        }
+
+.button{
+   text-align: center;
+    padding: 20px;
+    margin:30px;
+    border: 0;
+    background: rgb(42, 3, 218);
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+    outline: 0;
+    border-radius: 40%;
+    cursor: pointer;
+    position: absolute;
+    top: 196px;
+    right: 0px;
+    box-shadow: 0 9px #999;
+    
+    
+}
+
+.button {
+    width: 25%;
+        background:black;
+        color: white;
+        float: right;
+        border-left: 0px;
+
+        }
+
+        .button:hover {
+            opacity: 0.8;
+            
+        }
+        input:focus{
+        outline: none;
+    }
+    
+        .button:active {
+            background-color: #cf2e2e;
+           box-shadow: 0 5px rgb(231, 63, 63);
+            transform: translateY(4px);
+        }
+        #d1{
+            margin-left: 10%;
+        font-size: 17px;
+        padding: 20px;
+        color: white;
+        background-color: black;
+        max-width: 70%;
+        max-height: 100%;
+        padding-bottom: 30px;
+     }
+     @font-face {
+        font-family: "CustomFont";
+        src: url(assets/fonts/AvalonURWTMed.ttf);
+        font-size: large;
+        font-style: normal;
+    }
+
+
+</style>
+<body>
+    
+
+<div class="a4">
+    <h2><i> WELCOME TO KUBERNETES CONSOLE</i></h2>
+    <h2><i> HELLO TECH ENTHUSIAST</i></h2>
+    
+
+    
+</div>
+<div class="a3"><i><b> [root @localhost~]# <input id="in1" /></b></i></div>
+    <button class="button" onclick="lw()">
+        <b>RUN</b>
+    </button>
+<pre>
+<div id="d1">Press <b>RUN</b> to see your output here.<div />
+
+<pre/> 
+</body>
+
+
+    
+
+</html>
